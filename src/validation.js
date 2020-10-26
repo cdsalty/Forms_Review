@@ -8,7 +8,7 @@ export default function validation(values) {
   // Username
   if (!values.username.trim()) {
     errors.username = "A username is required"
-    console.log("username erro")
+    console.log("username error")
   }
 
   // Email 
