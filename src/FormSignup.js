@@ -1,6 +1,7 @@
 // will be the input where you type in the name, password, etc;
 import React from 'react';
 
+import validation from './validation';
 import useForm from './hooks/useForm';
 
 import './formSignup.css'
@@ -8,8 +9,8 @@ import './formSignup.css'
 const FormSignup = () => {
 
   // Destructure and pull out the values needed from useForm
-  const { handleChange, values, hanldeSubmit } = useForm();
-
+  const { handleChange, values, hanldeSubmit, errors } = useForm(validation);
+  console.log("FormSignup")
   return (
     <div className="form-content-right">
       <form className="form" onSubmit={hanldeSubmit}>
@@ -28,6 +29,7 @@ const FormSignup = () => {
             value={values.username} // referencing the values object in useForm
             onChange={handleChange}
           />
+          {errors.username && <p>{errors.username}</p>}
         </div>
 
         {/* Email */}
@@ -44,6 +46,7 @@ const FormSignup = () => {
             value={values.email}
             onChange={handleChange}
           />
+          {errors.email && <p>{errors.email}</p>}
         </div>
 
         {/* Password */}
@@ -60,6 +63,7 @@ const FormSignup = () => {
             value={values.password}
             onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>}
         </div>
 
         {/* Password2 */}
@@ -76,6 +80,7 @@ const FormSignup = () => {
             value={values.password2}
             onChange={handleChange}
           />
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
 
         {/* Button */}
@@ -92,5 +97,6 @@ const FormSignup = () => {
     </div>
   )
 }
+
 
 export default FormSignup;
