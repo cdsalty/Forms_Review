@@ -3,7 +3,7 @@
 A quick reference for forms with a custom validation function to validate the form's values.
 
 **reference**
-<input
+< input
   id = 'password'
   type = 'password'
   name = 'password'
