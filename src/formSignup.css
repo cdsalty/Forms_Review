@@ -1,4 +1,8 @@
+.form-inputs p {
+  color: red;
+}
 
+/* 
 form {
   display: flex;
   flex-direction: column;
@@ -39,4 +43,4 @@ button {
 .error-password2 {
   color: rgb(157, 1, 1);
   font-display: bold;
-}
+} */

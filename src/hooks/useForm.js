@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 
 const useForm = (validation) => {
+  console.log("useForm")
+
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -10,7 +12,7 @@ const useForm = (validation) => {
   });
 
   const [errors, setErrors] = useState({});
-  console.log("useForm")
+
   const handleChange = (e) => {
     // values will consist each value on the input form
     const { name, value } = e.target;
@@ -26,7 +28,7 @@ const useForm = (validation) => {
     setErrors(validation(values));
   }
 
-  // **don't forget to R E T U R N the handleChange function, and any values, errors we need to return. caused me headache
+  // **don't forget to R E T U R N / P A S S the handleChange function, and any values, errors we need to return. caused me headache
   return { handleChange, handleSubmit, values, errors }
 }
 

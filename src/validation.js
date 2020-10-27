@@ -22,14 +22,15 @@ export default function validation(values) {
   if (!values.password) {
     errors.password = "Password is required"
   } else if (values.password.length < 6) {
-    errors.password = "Password needs to be 6 characters or more"
+    errors.password = "Password must be 6 characters or more"
   }
 
   // Password 2
   if (!values.password2) {
     errors.password2 = "Password is required"
   } else if (values.password2 !== values.password) {
-    errors.password2 = "Passwords must match. Please try again"
+    // errors.password2 = "Passwords must match. Please try again"
+    errors.password2 = "One of your passwords was entered incorrectly. Please try again."
   }
 
   // D O N ' T  F O R G E T  T O  R E T U R N  T H E  E R R O R S
