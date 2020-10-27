@@ -9,12 +9,12 @@ import './formSignup.css'
 const FormSignup = () => {
 
   // Destructure and pull out the values needed from useForm
-  const { handleChange, values, hanldeSubmit, errors } = useForm(validation);
+  const { handleChange, values, handleSubmit, errors } = useForm(validation);
   console.log("FormSignup")
   return (
     <div className="form-content-right">
-      <form className="form" onSubmit={hanldeSubmit}>
-        <h2>Get Started Today! Create your account by filling out the information below.</h2>
+      <form className="form" onSubmit={handleSubmit}>
+        <h3>Get Started Today! Create your account by filling out the information below.</h3>
         {/* Username */}
         <div className="form-inputs">
           <label htmlFor="username" className="form-label">
@@ -29,7 +29,7 @@ const FormSignup = () => {
             value={values.username} // referencing the values object in useForm
             onChange={handleChange}
           />
-          {errors.username && <p>{errors.username}</p>}
+          {errors.username && <p className="error-username">{errors.username}</p>}
         </div>
 
         {/* Email */}
@@ -46,7 +46,7 @@ const FormSignup = () => {
             value={values.email}
             onChange={handleChange}
           />
-          {errors.email && <p>{errors.email}</p>}
+          {errors.email && <p className="error-email">{errors.email}</p>}
         </div>
 
         {/* Password */}
@@ -63,7 +63,7 @@ const FormSignup = () => {
             value={values.password}
             onChange={handleChange}
           />
-          {errors.password && <p>{errors.password}</p>}
+          {errors.password && <p className="error-password">{errors.password}</p>}
         </div>
 
         {/* Password2 */}
@@ -80,7 +80,7 @@ const FormSignup = () => {
             value={values.password2}
             onChange={handleChange}
           />
-          {errors.password2 && <p>{errors.password2}</p>}
+          {errors.password2 && <p className="error-password2">{errors.password2}</p>}
         </div>
 
         {/* Button */}

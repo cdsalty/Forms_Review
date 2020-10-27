@@ -1,9 +1,42 @@
-h2 {
-  color: rgba(97, 71, 242, 0.961);
-}
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
+  justify-content: flex-end;
+}
+
+h3 {
+  color: rgba(97, 71, 242, 0.961);
+  margin-bottom: 7px;
+}
+
+input {
+  margin: 3px;
+} 
+
+button {
+  margin: 8px;
+  padding: 5px;
+  background-color: coral;
+  color: white;
+  font-weight: bold;
+}
+.error-username {
+  color: green;
+  font-display: bold;
+}
+.error-email {
+  color: blue;
+  font-display: bold;
+}
+
+.error-password {
+  color: red;
+  font-display: bold;
+}
+
+.error-password2 {
+  color: rgb(157, 1, 1);
+  font-display: bold;
 }

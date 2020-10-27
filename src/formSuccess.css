@@ -1,0 +1,18 @@
+.error-username {
+  color: green;
+  font-display: bold;
+}
+.error-email {
+  color: blue;
+  font-display: bold;
+}
+
+.error-password {
+  color: red;
+  font-display: bold;
+}
+
+.error-password2 {
+  color: rgb(157, 1, 1);
+  font-display: bold;
+}
