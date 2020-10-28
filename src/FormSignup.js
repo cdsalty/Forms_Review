@@ -4,17 +4,17 @@ import React from 'react';
 import validation from './validation';
 import useForm from './hooks/useForm';
 
-import './formSignup.css'
+import './form.css'
 
-const FormSignup = () => {
+const FormSignup = ({ submitForm }) => {
 
   // Destructure and pull out the values needed from useForm
-  const { handleChange, values, handleSubmit, errors } = useForm(validation);
+  const { handleChange, values, handleSubmit, errors } = useForm(validation, submitForm);
   console.log("FormSignup")
   return (
     <div className="form-content-right">
-      <form className="form" onSubmit={handleSubmit}>
-        <h3>Get Started Today! Create your account by filling out the information below.</h3>
+      <form className="form" onSubmit={handleSubmit} noValidate>
+        <h1>Get Started Today! Create your account by filling out the information below.</h1>
         {/* Username */}
         <div className="form-inputs">
           <label htmlFor="username" className="form-label">
@@ -90,7 +90,7 @@ const FormSignup = () => {
 
         <span className="form-input-login">
           {/* eslint-disable-next-line */}
-          Already have an account? <a href="#">Login Here</a>
+          Already have an account? Login <a href="#">HERE</a>
         </span>
 
       </form>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import FormSignup from './FormSignup';
-import FormSuccess from './FormSuccess'
+import FormSuccess from './FormSuccess';
 import './form.css';
 
 
@@ -9,13 +9,21 @@ const Form = () => {
 
   const submitForm = () => (setIsSubmitted(true));
 
+  // if form hasn't been sumbitted, then show the form signup. If it has, then show form success. 
   return (
-    <div>
-      {!isSubmitted ?
-        (<FormSignup sumForm={submitForm} />)
-        :
-        (<FormSuccess />)}
-    </div>
+    <>
+      <div className="form-container">
+        <span className="close-btn">x</span>
+        <div className="form-content-left">
+          <img src="img/img-2.svg" alt="spaceship" className="form-img" />
+        </div>
+        {!isSubmitted ?
+          (<FormSignup submitForm={submitForm} />)
+          :
+          (<FormSuccess />)
+        }
+      </div>
+    </>
   );
 }
 
